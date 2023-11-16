@@ -1,4 +1,5 @@
 # TheRebuildChallenge
+The Rebuild Challenge, powered by UM6P Career Center in collaboration with Startgate, is a transformative initiative designed to address the outcomes of the moroccan-earthquake . This challenge endeavors to uncover innovative solutions for areas that was impacted by it,hopping to find a diverse range of strategies to assist and uplift these communities in various aspects of their recovery journey. [poster here](linkedin.com/posts/um6p-career-center_rebuildabrchallenge-careercenter-startgate-activity-7122670390547488768-Fc6s/?utm_source=share&utm_medium=member_desktop)
 
 # Overview
 This project focuses on creating a comprehensive website aimed at providing assistance to areas affected by moroccan earthquake (AL haouz 2023). The website integrates multiple features, including donation campaigns, an interactive map highlighting damaged regions, tourist-friendly destinations. except the website we aimed to made an assistance program to uplift the local community.
