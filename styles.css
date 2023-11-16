@@ -770,11 +770,13 @@ video {
     background-color: #22b07d;
     border-radius: 50%;
     margin-left: 8px;
-    display: inline-block;
+    /* display: inline-block; */
+    display: none;
 }
 
 .video-p-name.offline:after {
     background-color: #ff7551;
+    display: none;
 }
 
 .video-content {
@@ -876,6 +878,7 @@ video {
     width: calc(100% + 20px);
     padding-bottom: 12px;
     background-color: #252836;
+    display: none;
 }
 
 .chat-footer input {
@@ -1027,6 +1030,7 @@ video {
 .video-js .vjs-control-bar {
     display: flex;
     align-items: center;
+    /* display: none; */
 }
 
 .vjs-poster {
@@ -1239,3 +1243,14 @@ button.vjs-play-control.vjs-control.vjs-button {
 #map{
     height: 30rem;
 }
+
+/* #abdel {
+    animation: animo 0s 2s forwards;
+    visibility: hidden;
+} */
+
+/* @keyframes animo {
+    to {
+        visibility: visible;
+    }
+} */
