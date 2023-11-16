@@ -1041,7 +1041,6 @@ video {
     width: 100%;
     position: absolute;
     bottom: 14px;
-    padding-left: 36px;
     left: 14px;
     width: calc(100% - 28px);
     right: 0;
@@ -1075,7 +1074,7 @@ video {
     border-color: transparent;
 }
 
-.vjs-play-control:after {
+/* .vjs-play-control:after {
     content: "LIVE";
     position: absolute;
     left: -66px;
@@ -1094,7 +1093,7 @@ video {
     background-repeat: no-repeat;
     background-size: 6px;
     background-position: 12px;
-}
+} */
 
 @media screen and (max-width: 625px) {
     .vjs-play-control:after {
@@ -1117,7 +1116,7 @@ video {
 }
 
 button.vjs-play-control.vjs-control.vjs-button {
-    margin-left: 40px;
+    /* margin-left: 40px; */
 }
 
 @media screen and (max-width: 625px) {
