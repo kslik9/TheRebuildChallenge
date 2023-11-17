@@ -537,6 +537,7 @@ body:before {
 }
 
 .video-wrapper {
+    display: flex;
     position: relative;
 }
 
@@ -601,7 +602,7 @@ body:before {
 }
 
 .video:hover .video-time {
-    display: none;
+    /* display: none; */
 }
 
 .video:hover .video-author {
@@ -612,7 +613,7 @@ body:before {
 }
 
 .video:hover .video-by {
-    opacity: 0;
+    /* opacity: 0; */
 }
 
 .video-author {
@@ -1241,6 +1242,11 @@ button.vjs-play-control.vjs-control.vjs-button {
 
 #map{
     height: 30rem;
+}
+
+.video-images{
+    max-height: 10rem;
+    width: 100%;
 }
 
 /* #abdel {

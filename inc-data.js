@@ -1,0 +1,129 @@
+
+
+
+let data = [
+    {
+        "id": 1,
+        "title": "Ourika",
+        "about": "The Ourika valley located at a short distance from Marrakesh 60 km. traveling along the Ourika valley will make you enjoy the beautiful landscapes, from walnuts, wiping willow and poplar trees, to its mountains and rocks varying in color from red to green.",
+        "coordinates": "31.37354647394571, -7.79169160055411",
+        "images" : [
+            {
+                "url": "https://i.ibb.co/tzTtCNT/ourika-1.jpg",
+                "path": "assets/images/ourika-1",
+                "name": "ourika1"
+            },
+            {
+                "url": "https://i.ibb.co/jMrPY4g/ourika-2.jpg",
+                "path": "assets/images/ourika-2",
+                "name": "ourika2"
+            },
+            {
+                "url": "https://i.ibb.co/Ps2bqx8/ourika-3.jpg",
+                "path": "assets/images/ourika-3",
+                "name": "ourika3"
+            },
+            {
+                "url": "https://i.ibb.co/tsGpvgL/ourika-4.jpg",
+                "path": "assets/images/ourika-4",
+                "name": "ourika4"
+            },
+            {
+                "url": "https://i.ibb.co/h1jNSmm/ourika-5.jpg",
+                "path": "assets/images/ourika-5",
+                "name": "ourika5"
+            }
+        ]
+    },
+    {
+        "id":2,
+        "title": "Amizmiz",
+        "coordinates": "31.222223104150522, -8.242335935687853",
+        "about": "Amizmiz is a small town about 40 kilometers from Marrakech, situated at the foot of the hight atlas mountains, you can visit it if you want to discover more about what amazigh villages look like, there are bunch of small cafes and restraurents which serve sandwiches and small tajines with meat and vegetables. these are generally cheap, filling, and tasty.",
+        "images": [
+            {
+                "url": "https://i.ibb.co/XF2RscF/amizmiz-1.jpg",
+                "path": "assets/images/amizmiz-1",
+                "name": "amizmiz1"
+            },
+            {
+                "url": "https://i.ibb.co/58sNkW8/amizmiz-2.jpg",
+                "path": "assets/images/amizmiz-2",
+                "name": "amizmiz2"
+            },
+            {
+                "url": "https://i.ibb.co/x7Wd827/amizmiz-3.jpg",
+                "path": "assets/images/amizmiz-3",
+                "name": "amizmiz3"
+            },
+            {
+                "url": "https://i.ibb.co/Nj10jy2/amizmiz-4.jpg",
+                "path": "assets/images/amizmiz-4",
+                "name": "amizmiz4"
+            },
+            {
+                "url": "https://i.ibb.co/FXXcsQv/amizmiz-5.jpg",
+                "path": "assets/images/amizmiz-5",
+                "name": "amizmiz5"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Asni",
+        "about": "around 47 km from Marrakech, the small and beautiful village Asni is located, was historically known as the crossing point for commercial convoys between Taroudant and Marrakech, according to 2014 statics, the village had a total of 25,153, it's known by its unique and more comfortable climate, you can have a mountains tour and meet lovely people from there, sahara trek and toubkal mount ",
+        "coordinates": "31.248929278236456, -7.979902618978183",
+        "images": [
+            {
+                "url": "https://i.ibb.co/rw1mNGF/asni-1.jpg",
+                "path": "assets/images/asni-1",
+                "name": "asni1"
+            },
+            {
+                "url": "https://i.ibb.co/dG0bHNp/asni-2.jpg",
+                "path": "assets/images/asni-2",
+                "name": "asni2"
+            },
+            {
+                "url": "https://i.ibb.co/FnsRZms/asni-3.jpg",
+                "path": "assets/images/asni-3",
+                "name": "asni3"
+            }
+        ]
+    }
+    ,
+    {
+        "id": 4,
+        "title": "Setti Fatma",
+        "about": "Setti Fatma is a small village located in the High Atlas Mountains of Morocco, about 60 kilometers south of Marrakech. The village is known for its beautiful waterfalls and stunning natural scenery, and it's a popular destination for hiking and outdoor activities.",
+        "coordinates": "31.226421603595426, -7.675570409925487",
+        "images": [
+            {
+                "url": "https://i.ibb.co/FxqcrHs/setti-1.jpg",
+                "path": "assets/images/setti-1",
+                "name": "setti-fatma-1"
+            },
+            {
+                "url": "https://i.ibb.co/Yd0BCg6/setti-2.jpg",
+                "path": "assets/images/setti-2",
+                "name": "setti-fatma-2",
+                "credits": "@mellyssssssss"
+            },
+            {
+                "url": "https://i.ibb.co/bKrBkr9/setti-3.webp",
+                "path": "assets/images/setti-3",
+                "name": "asni3"
+            }
+        ]
+    }
+]
+
+// window.addEventListener("load", () => {
+//     let video_images = document.getElementsByClassName('video-images');
+//     let saoudi = 0;
+//     data.forEach(element => {
+//         video_images[saoudi].setAttribute("src", element.images[0].path);
+//         console.log(element.images[0].path);
+//         saoudi++;
+//     });
+// });

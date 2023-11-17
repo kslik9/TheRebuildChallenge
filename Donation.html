@@ -1,215 +1,230 @@
-<html lang="en"><head>
-    <meta charset="UTF-8">
-    
-  
-      <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
-  
-      <meta name="apple-mobile-web-app-title" content="CodePen">
-  
-      <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
-  
-      <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111">
-  
-  
-  
-    
-      <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
-  
-  
-    <title>CodePen - Donate page</title>
-  
-      <link rel="canonical" href="https://codepen.io/dspstudio/pen/mERQWw">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-  
-    
-    
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+
+  <link rel="apple-touch-icon" type="image/png"
+    href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+
+  <meta name="apple-mobile-web-app-title" content="CodePen">
+
+  <link rel="shortcut icon" type="image/x-icon"
+    href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+
+  <link rel="mask-icon" type="image/x-icon"
+    href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg"
+    color="#111">
+
+
+
+
+  <script
+    src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+
+
+  <title>CodePen - Donate page</title>
+
+  <link rel="canonical" href="https://codepen.io/dspstudio/pen/mERQWw">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+
+
   <style>
-  @import url(https://fonts.googleapis.com/css?family=Oswald:400,700,300);
-  @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600);
-  body {
-  background-color: #252936;
-  font-family: "Inter", sans-serif;
-  display: flex;
-  justify-content: center; /* Center the content horizontally */
-  align-items: center; /* Center the content vertically */
-  min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
-  margin: 0;
-}
+    @import url(https://fonts.googleapis.com/css?family=Oswald:400,700,300);
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600);
 
-.donate {
-  background-color: #1F1D2B;
-  width: 500px;
-  height: 50%;
-  color: #FFF;
-  border-radius: 20px;
-  margin: 0 auto; /* Center the donate form within its container */
-}
-  
-  .donate p {
-    line-height: 24px;
-    font-size: 14px;
-    font-weight: 300;
-  }
-  
-  .donate h3 {
-    font-size: 14px;
-    font-weight: 300;
-    margin-bottom: 30px;
-  }
-  
-  .denomination {
-    float: left;
-    width: 33%;
-    text-align: center;
-    padding: 13px 0;
-    cursor: pointer;
-    background-color: #2E2F3D;
-    margin: 0 1px 1px 0;
-    transition: background-color 0.2s ease;
-  }
-  
-  .denomination label {
-    font-weight: 600;
-    cursor: pointer;
-  }
-  
-  .denomination input {
-    left: -10001px;
-    position: absolute;
-  }
-  
-  .denomination-other {
-    width: 99.8%;
-  }
-  
-  .denomination-other input {
-    position: relative;
-    color: #FFF;
-    font-size: 14px;
-    font-weight: 600;
-    width: inherit;
-    text-align: center;
-    background-color: #2E2F3D;
-    border: none;
-    padding: 13px 0;
-    transition: background-color 0.2s ease;
-  }
-  
-  .denomination-other input:hover {
-    background-color: #FF7551;
-  }
-  
-  .denomination-other input:before {
-    position: absolute;
-    left: 6px;
-    top: 2px;
-    content: "$";
-  }
-  
-  .donate-amount .selected, .denomination-other input.selected, .donate-amount .denomination:hover {
-    background-color: #FF7551;
-    border: 0;
-  }
-  
-  .donate-black h2 {
-    font-family: "Oswald", sans-serif;
-    color: #FFF;
-    font-size: 32px;
-    margin-bottom: 30px;
-  }
-  
-  .donate-black h2 span {
-    display: block;
-    float: left;
-    font-size: 16px;
-    padding-top: 7px;
-    margin-right: 20px;
-    text-align: center;
-    width: 30px;
-    height: 25px;
-    background-color: #FF7551;
-    border-radius: 50%;
-  }
-  
-  .donate-type label,
-  .donate-payment label {
-    font-size: 14px;
-    font-weight: 300;
-    margin-right: 30px;
-  }
-  
-  .donate-blue {
-    background-color: #1F1D2B;
-    padding: 25px;
-    border-radius: 20px;
+    body {
+      background-color: #252936;
+      font-family: "Inter", sans-serif;
+      display: flex;
+      justify-content: center;
+      /* Center the content horizontally */
+      align-items: center;
+      /* Center the content vertically */
+      min-height: 100vh;
+      /* Ensure the body takes at least the full height of the viewport */
+      margin: 0;
+    }
 
-  }
-  
-  .donate-black {
-    padding: 25px;
-  }
-  
-  .donate-submit button {
-    font-family: "Oswald", sans-serif;
-    width: 100%;
-    background-color: #FF7551;
-    border: none;
-    color: #FFF;
-    font-size: 20px;
-    line-height: 20px;
-    padding: 14px 0;
-    margin: 30px 0;
-    text-transform: uppercase;
-    cursor: pointer;
-  border-radius: 20px;
+    .donate {
+      background-color: #1F1D2B;
+      width: 500px;
+      height: 50%;
+      color: #FFF;
+      border-radius: 20px;
+      margin: 0 auto;
+      /* Center the donate form within its container */
+    }
 
-  }
-  
-  .donate-submit small {
-    color: rgba(255, 255, 255, 0.4);
-    font-size: 13px;
-  }
-  
-  ::-webkit-input-placeholder {
-    color: #FFF;
-    font-size: 14px;
-    font-weight: 300;
-  }
-  
-  :-moz-placeholder {
-    color: #FFF;
-    font-weight: 300;
-  }
-  
-  ::-moz-placeholder {
-    color: #FFF;
-    font-weight: 300;
-  }
-  
-  :-ms-input-placeholder {
-    font-weight: 300;
-    color: #FFF;
-  }
-  
-  *:focus {
-    outline: none;
-  }
+    .donate p {
+      line-height: 24px;
+      font-size: 14px;
+      font-weight: 300;
+    }
+
+    .donate h3 {
+      font-size: 14px;
+      font-weight: 300;
+      margin-bottom: 30px;
+    }
+
+    .denomination {
+      float: left;
+      width: 33%;
+      text-align: center;
+      padding: 13px 0;
+      cursor: pointer;
+      background-color: #2E2F3D;
+      margin: 0 1px 1px 0;
+      transition: background-color 0.2s ease;
+    }
+
+    .denomination label {
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .denomination input {
+      left: -10001px;
+      position: absolute;
+    }
+
+    .denomination-other {
+      width: 99.8%;
+    }
+
+    .denomination-other input {
+      position: relative;
+      color: #FFF;
+      font-size: 14px;
+      font-weight: 600;
+      width: inherit;
+      text-align: center;
+      background-color: #2E2F3D;
+      border: none;
+      padding: 13px 0;
+      transition: background-color 0.2s ease;
+    }
+
+    .denomination-other input:hover {
+      background-color: #FF7551;
+    }
+
+    .denomination-other input:before {
+      position: absolute;
+      left: 6px;
+      top: 2px;
+      content: "$";
+    }
+
+    .donate-amount .selected,
+    .denomination-other input.selected,
+    .donate-amount .denomination:hover {
+      background-color: #FF7551;
+      border: 0;
+    }
+
+    .donate-black h2 {
+      font-family: "Oswald", sans-serif;
+      color: #FFF;
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    .donate-black h2 span {
+      display: block;
+      float: left;
+      font-size: 16px;
+      padding-top: 7px;
+      margin-right: 20px;
+      text-align: center;
+      width: 30px;
+      height: 25px;
+      background-color: #FF7551;
+      border-radius: 50%;
+    }
+
+    .donate-type label,
+    .donate-payment label {
+      font-size: 14px;
+      font-weight: 300;
+      margin-right: 30px;
+    }
+
+    .donate-blue {
+      background-color: #1F1D2B;
+      padding: 25px;
+      border-radius: 20px;
+
+    }
+
+    .donate-black {
+      padding: 25px;
+    }
+
+    .donate-submit button {
+      font-family: "Oswald", sans-serif;
+      width: 100%;
+      background-color: #FF7551;
+      border: none;
+      color: #FFF;
+      font-size: 20px;
+      line-height: 20px;
+      padding: 14px 0;
+      margin: 30px 0;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 20px;
+
+    }
+
+    .donate-submit small {
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 13px;
+    }
+
+    ::-webkit-input-placeholder {
+      color: #FFF;
+      font-size: 14px;
+      font-weight: 300;
+    }
+
+    :-moz-placeholder {
+      color: #FFF;
+      font-weight: 300;
+    }
+
+    ::-moz-placeholder {
+      color: #FFF;
+      font-weight: 300;
+    }
+
+    :-ms-input-placeholder {
+      font-weight: 300;
+      color: #FFF;
+    }
+
+    *:focus {
+      outline: none;
+    }
   </style>
-  
-    <script>
-    window.console = window.console || function(t) {};
+
+  <script>
+    window.console = window.console || function (t) { };
   </script>
-  
-    
-    
-  </head>
-  
-  <body translate="no">
-    <div class="donate">
+
+
+
+</head>
+
+<body translate="no">
+  <div class="donate">
     <div class="donate-black">
       <h2><span>$</span> Donate</h2>
-      <p>Your contribution is vital to the success of our initiative.<br>Choose the amount you wish to donate with CMI, as one-time or monthly payment. </p>
+      <p>Your contribution is vital to the success of our initiative.<br>Choose the amount you wish to donate with CMI,
+        as one-time or monthly payment. </p>
     </div>
     <div class="donate-blue">
       <h3>Donation amount*</h3>
@@ -241,20 +256,19 @@
           </div>
         </div>
         <div class="denomination-other">
-            <input autocomplete="off" type="text" name="amount" value="" placeholder="Enter Other Amount">
-          </div>
+          <input autocomplete="off" type="text" name="amount" value="" placeholder="Enter Other Amount">
+        </div>
       </div>
     </div>
     <div class="donate-black donate-type">
       <h3>Donation type*</h3>
       <label>
-                  <input type="radio" name="donation_type" value="single" checked="checked" autocomplete="off" class="required">
-                  One-Time
+        <input type="radio" name="donation_type" value="single" checked="checked" autocomplete="off" class="required">
+        One-Time
       </label>
       <label>
-                  <input type="radio" name="donation_type" value="recurring" autocomplete="off" class="required">
-                  Monthly
-      </label>
+        <input type="radio" name="donation_type" value="recurring" autocomplete="off" class="required">
+        Monthly</label>
     </div>
     <div class="donate-blue donate-payment">
       <h3>Payment Method</h3>
@@ -268,35 +282,37 @@
       </div>
     </div>
   </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script id="rendered-js">
-  $(".denomination").click(function (event) {
-    $(".denomination").removeClass("selected").prop('checked', false);
-    $(".denomination-other input").removeClass("selected").val('');
-    $(this).addClass("selected");
-    $(this).children(":first").prop('checked', true);
-    $("button").text('Donate ' + $(this).children(":first").val() + ' MAD');
-  });
-  
-  $(".denomination-other input").on('keypress', function (event) {
-    // allow only int values
-    // TODO: remove leading 0
-    var regex = new RegExp("^[0-9]+$");
-    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-    if (!regex.test(key)) {
-      event.preventDefault();
-      return false;
-    }
-  
-    $(".denomination").removeClass("selected").prop('checked', false);
-    $(this).addClass("selected");
-    $("button").text('Donate ' + $(this).val() + key + ' MAD');
-  });
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script id="rendered-js">
+    $(".denomination").click(function (event) {
+      $(".denomination").removeClass("selected").prop('checked', false);
+      $(".denomination-other input").removeClass("selected").val('');
+      $(this).addClass("selected");
+      $(this).children(":first").prop('checked', true);
+      $("button").text('Donate ' + $(this).children(":first").val() + ' MAD');
+    });
+
+    $(".denomination-other input").on('keypress', function (event) {
+      // allow only int values
+      // TODO: remove leading 0
+      var regex = new RegExp("^[0-9]+$");
+      var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+      if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+      }
+
+      $(".denomination").removeClass("selected").prop('checked', false);
+      $(this).addClass("selected");
+      $("button").text('Donate ' + $(this).val() + key + ' MAD');
+    });
   //# sourceURL=pen.js
-      </script>
-  
-    
-  
-  
-  
-  </body></html>
+  </script>
+
+
+
+
+
+</body>
+
+</html>
