@@ -16,7 +16,7 @@ img {
 
 :root {
     --body-font: "Inter", sans-serif;
-    --theme-bg: #1f1d2b;
+    --theme-bg: #1f1d2bb9;
     --body-color: #808191;
     --button-bg: #353340;
     --border-color: rgb(128 129 145 / 24%);
@@ -108,7 +108,7 @@ body:before {
     position: absolute;
     top: -30px;
     left: 0;
-    background: var(--theme-bg);
+    /* background: var(--theme-bg); */
     width: 200px;
     height: 70px;
     z-index: -1;
@@ -349,10 +349,10 @@ body:before {
     color: #fff;
     font-weight: 700;
     padding-bottom: 20px;
-    position: sticky;
+    /* position: sticky; */
     top: 0;
     left: 0;
-    background: linear-gradient(to bottom, #1f1d2b 0%, #1f1d2b 78%, rgba(31, 29, 43, 0) 100%);
+    /* background: linear-gradient(to bottom, #1f1d2b 0%, #1f1d2b 78%, rgba(31, 29, 43, 0) 100%); */
     z-index: 11;
 }
 
@@ -1241,7 +1241,7 @@ button.vjs-play-control.vjs-control.vjs-button {
 /*  */
 
 #map{
-    height: 30rem;
+    height: 26rem;
 }
 
 .video-images{

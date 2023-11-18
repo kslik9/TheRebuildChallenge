@@ -30,14 +30,10 @@
         src="chrome-extension://fdjamakpfbbddfjaooikfcpapjohcfmg/content/pageScripts/dashlane-webauthn-page-script.js"
         id="dashlane_webauthn" name="forward_webauthn_ready"></script>
     <meta charset="UTF-8">
-    <link rel="apple-touch-icon" type="image/png"
-        href="./archive/logo.png">
+    <link rel="apple-touch-icon" type="image/png" href="./archive/logo.png">
     <meta name="apple-mobile-web-app-title" content="CodePen">
-    <link rel="shortcut icon" type="image/x-icon"
-        href="./archive/logo.png">
-    <link rel="mask-icon" type="image/x-icon"
-        href="./archive/logo.png"
-        color="#111">
+    <link rel="shortcut icon" type="image/x-icon" href="./archive/logo.png">
+    <link rel="mask-icon" type="image/x-icon" href="./archive/logo.png" color="#111">
     <script
         src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
     <title>Anmali - Home page</title>
@@ -63,7 +59,7 @@
     <div class="container">
         <div class="sidebar">
             <span class="logo">S</span>
-            <a class="logo-expand" href="#">Anmali</a>
+            <a style="font-size: 2rem;" class="logo-expand" href="#">Anmali</a>
             <div class="side-wrapper">
                 <div class="side-title">MENU</div>
                 <div class="side-menu">
@@ -153,10 +149,9 @@
                     <input type="text" placeholder="Search" data-dashlane-rid="daa45c332fc75138" data-form-type="other">
                 </div>
                 <div class="user-settings">
-                    <img class="user-img"
-                        src="https://images.unsplash.com/photo-1587918842454-870dbd18261a?ixlib=rb-1.2.1&amp;ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;auto=format&amp;fit=crop&amp;w=943&amp;q=80"
-                        alt="">
-                    <div class="user-name">Thomas</div>
+                    <img style="background-color: white;" class="user-img"
+                        src="https://icons.veryicon.com/png/o/internet--web/prejudice/user-128.png" alt="">
+                    <div class="user-name">User</div>
                     <svg viewBox="0 0 492 492" fill="currentColor">
                         <path
                             d="M484.13 124.99l-16.11-16.23a26.72 26.72 0 00-19.04-7.86c-7.2 0-13.96 2.79-19.03 7.86L246.1 292.6 62.06 108.55c-5.07-5.06-11.82-7.85-19.03-7.85s-13.97 2.79-19.04 7.85L7.87 124.68a26.94 26.94 0 000 38.06l219.14 219.93c5.06 5.06 11.81 8.63 19.08 8.63h.09c7.2 0 13.96-3.57 19.02-8.63l218.93-219.33A27.18 27.18 0 00492 144.1c0-7.2-2.8-14.06-7.87-19.12z">
@@ -191,8 +186,111 @@
                     </div>
                 </div>
                 <div class="small-header anim" style="--delay: .3s">Most Watched</div>
-                <div class="videos">
-                    
+                <div class="videos"></div>
+                <script>
+                    // Your array of video data
+                    let videoDataArray = [
+                        {
+                            imageSrc: "./assets/images/amizmiz-1.jpg",
+                            by: "Andy William",
+                            name: "Basic how to ride your skateboard comfortly",
+                            views: "54K views",
+                            timeAgo: "1 week ago",
+                        },
+                        {
+                            imageSrc: "./assets/images/ourika-2.jpg",
+                            by: "Andy William",
+                            name: "Basic how to ride your skateboard comfortly",
+                            views: "54K views",
+                            timeAgo: "1 week ago",
+                        },
+                        {
+                            imageSrc: "./assets/images/setti-3.webp",
+                            by: "Andy William",
+                            name: "Basic how to ride your skateboard comfortly",
+                            views: "54K views",
+                            timeAgo: "1 week ago",
+                        },
+                        {
+                            imageSrc: "./assets/images/asni-2.webp",
+                            by: "Andy William",
+                            name: "Basic how to ride your skateboard comfortly",
+                            views: "54K views",
+                            timeAgo: "1 week ago",
+                        }
+                    ];
+
+                    function getRandomInt(min, max) {
+                        return Math.floor(Math.random() * (max - min + 1)) + min;
+                    }
+
+                    // Reference to the videos container
+                    const videosContainer = document.querySelector('.videos');
+
+                    // Function to create a video element based on the provided data
+                    function createVideoElement(data) {
+                        const videoElement = document.createElement('div');
+                        videoElement.classList.add('video', 'anim');
+                        videoElement.style.setProperty('--delay', `${(Math.random() * 0.3 + 0.4).toFixed(1)}s`); // Random delay for animation
+
+                        videoElement.innerHTML = `
+                        <div class="video-wrapper">
+                          <img class="video-images" src="${data.imageSrc}" alt="" srcset="">
+                        </div>
+                        <div class="video-by">${data.by}</div>
+                        <div class="video-name">${data.name}</div>
+                        <div class="video-view">${data.views}<span class="separate video-separate"></span>${data.timeAgo}</div>
+                      `;
+
+                        return videoElement;
+                    }
+
+                    // Function to add videos to the container
+                    function addVideosToContainer() {
+                        videoDataArray.forEach((videoData) => {
+                            const videoElement = createVideoElement(videoData);
+                            videosContainer.prepend(videoElement); // Use prepend to add at the start
+                        });
+                    }
+
+                    // Initial addition of videos
+                    addVideosToContainer();
+
+                    // Event listener for wheel event
+                    document.getElementById('map').addEventListener('wheel', function (event) {
+                        videoDataArray.forEach(video => {
+                            let int_ix = getRandomInt(0, 3);
+                            video.imageSrc = videoDataArray[int_ix].imageSrc;
+                            console.log(int_ix);
+                        });
+
+                        // Simulating the update of video data based on wheel direction
+                        //if (event.deltaY > 0) {
+                         //   // Scrolling down, decrease views count
+                          //  videoDataArray.forEach(video => {
+                           // });
+                        //} else if (event.deltaY < 0) {
+                            // Scrolling up, increase views count
+                        //    videoDataArray.forEach(video => {
+                         //       video.imageSrc = videoDataArray[getRandomInt(0, 3)].imageSrc;
+                          //  });
+                        //}
+
+                        // Update the videos container with the modified data
+                        updateVideosContainer();
+                    });
+
+                    // Function to update the videos container with the modified data
+                    function updateVideosContainer() {
+                        // Clear existing videos
+                        videosContainer.innerHTML = '';
+
+                        // Add updated videos to the container
+                        addVideosToContainer();
+                    }
+
+                </script>
+                <!-- <div class="videos">
                     <div class="video anim" style="--delay: .4s">
                         <div class="video-wrapper">
                             <img class="video-images" src="./assets/images/amizmiz-1.jpg" alt="" srcset="">
@@ -226,7 +324,7 @@
                         <div class="video-name">Tips to playing skateboard on the ramp</div>
                         <div class="video-view">50K views<span class="seperate video-seperate"></span>1 week ago</div>
                     </div>
-                </div>
+                </div> -->
                 <div class="stream-area">
                     <div class="video-stream">
                         <div tabindex="-1"
@@ -235,12 +333,10 @@
                             preload="none"
                             class="video-js vjs-default-skin anim vjs-paused my_video_1-dimensions vjs-fluid vjs-controls-enabled vjs-workinghover vjs-v5 vjs-user-inactive"
                             id="my_video_1" role="region" aria-label="video player">
-                            <video id="my_video_1_html5_api"
-                                class="vjs-tech" preload="none"
+                            <video id="my_video_1_html5_api" class="vjs-tech" preload="none"
                                 poster="https://images.unsplash.com/photo-1476801071117-fbc157ae3f01?ixlib=rb-1.2.1&amp;ixid=MXwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDh8fHxlbnwwfHx8&amp;w=1000&amp;q=80"
                                 data-setup="{ &quot;aspectRatio&quot;:&quot;940:620&quot;, &quot;playbackRates&quot;: [1, 1.5, 2] }"
-                                tabindex="-1"
-                                style="display: none;">
+                                tabindex="-1" style="display: none;">
                                 <source
                                     src="https://player.vimeo.com/external/390402719.sd.mp4?s=20cfdb066c4253047562b65bd4e411b86a004bc5&amp;profile_id=139&amp;oauth2_token_id=57447761"
                                     type="video/mp4">
@@ -515,7 +611,10 @@
                             <div class="video-content">
                                 <div class="video-p-title anim" style="--delay: .2s">El Haouz
                                 </div>
-                                <p class="video-p-subtitle anim" style="--delay: .3s">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis pariatur eaque aperiam, temporibus eos deleniti! Perferendis eligendi aliquam esse fuga laboriosam consectetur ipsum harum ab? Ex distinctio obcaecati provident culpa.</p>
+                                <p class="video-p-subtitle anim" style="--delay: .3s">Lorem ipsum dolor sit amet
+                                    consectetur adipisicing elit. Perferendis pariatur eaque aperiam, temporibus eos
+                                    deleniti! Perferendis eligendi aliquam esse fuga laboriosam consectetur ipsum harum
+                                    ab? Ex distinctio obcaecati provident culpa.</p>
                             </div>
                         </div>
                     </div>
@@ -605,9 +704,9 @@
                             <div class="chat-vid anim" style="--delay: .4s">
                                 <div class="chat-vid__wrapper">
                                     <img class="chat-vid__img"
-                                        src="https://cdn.nohat.cc/thumb/f/720/3b55eddcfffa4e87897d.jpg">
+                                        src="https://www.moroccoworldnews.com/wp-content/uploads/2023/09/morocco-earthquake-temporary-military-hospital-set-up-in-al-haouz-province-800x567.jpeg">
                                     <div class="chat-vid__content">
-                                        <div class="chat-vid__name">Prepare for your first skateboard jump</div>
+                                        <div class="chat-vid__name">Prepare for your first skateboard jumpx</div>
                                         <div class="chat-vid__by">Jordan Wise</div>
                                         <div class="chat-vid__info">125.908 views <span class="seperate"></span>2 days
                                             ago</div>
@@ -616,9 +715,10 @@
                             </div>
                             <div class="chat-vid anim" style="--delay: .5s">
                                 <div class="chat-vid__wrapper">
-                                    <img class="chat-vid__img" src="#">
+                                    <img class="chat-vid__img"
+                                        src="https://img.lemde.fr/2023/09/09/0/0/6000/4000/1440/960/60/0/c826ca2_1694275820959-000-33uq488.jpg">
                                     <div class="chat-vid__content">
-                                        <div class="chat-vid__name">Prepare for your first skateboard jump</div>
+                                        <div class="chat-vid__name">Prepare for your first skateboard jumpy</div>
                                         <div class="chat-vid__by">Jordan Wise</div>
                                         <div class="chat-vid__info">125.908 views <span class="seperate"></span>2 days
                                             ago</div>
