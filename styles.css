@@ -43,6 +43,22 @@ body {
     overflow: hidden;
 }
 
+.booknow {
+    background-color: #6c5ecf;
+    border: 0;
+    color: #fff;
+    font-size: 13px;
+    margin-top: 26px;
+    display: flex;
+    padding: 0 10px;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
 body:before {
     position: absolute;
     left: 0;
@@ -569,7 +585,7 @@ body:before {
     position: relative;
 }
 
-.video-by:before {
+/* .video-by:before {
     content: "";
     background-color: #22b07d;
     width: 6px;
@@ -578,7 +594,7 @@ body:before {
     position: absolute;
     top: 26px;
     right: 5px;
-}
+} */
 
 .video-by.offline:before {
     background-color: #ff7551;
