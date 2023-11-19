@@ -57,7 +57,7 @@
 <body translate="no" class="">
     <canvas class="background" width="2490" height="1514" style="width: 100%; height: 100%; position: fixed;"></canvas>
     <div class="container">
-        <div class="sidebar">
+        <div class="sidebar collapse">
             <span class="logo">S</span>
             <a style="font-size: 1rem;" class="logo-expand" href="#">Craft-Tour</a>
             <div class="side-wrapper">
@@ -77,7 +77,7 @@
                                 d="M10.835 12.007l.002.354c.012 1.404.096 2.657.242 3.451 0 .015.16.802.261 1.064.16.38.447.701.809.905a2 2 0 00.91.219c.249-.012.66-.137.954-.242l.244-.094c1.617-.642 4.707-2.74 5.891-4.024l.087-.09.39-.42c.245-.322.375-.715.375-1.138 0-.379-.116-.758-.347-1.064-.07-.099-.18-.226-.28-.334l-.379-.397c-1.305-1.321-4.129-3.175-5.593-3.79 0-.013-.91-.393-1.343-.407h-.057c-.665 0-1.286.379-1.603.991-.087.168-.17.496-.233.784l-.114.544c-.13.874-.216 2.216-.216 3.688zm-6.332-1.525C3.673 10.482 3 11.162 3 12a1.51 1.51 0 001.503 1.518l3.7-.328c.65 0 1.179-.532 1.179-1.19 0-.658-.528-1.191-1.18-1.191l-3.699-.327z">
                             </path>
                         </svg>
-                         Workshops
+                        Workshops
                     </a>
                     <!-- <a class="sidebar-link" href="#">
                         <svg viewBox="0 0 24 24" fill="currentColor">
@@ -266,14 +266,14 @@
 
                         // Simulating the update of video data based on wheel direction
                         //if (event.deltaY > 0) {
-                         //   // Scrolling down, decrease views count
-                          //  videoDataArray.forEach(video => {
-                           // });
+                        //   // Scrolling down, decrease views count
+                        //  videoDataArray.forEach(video => {
+                        // });
                         //} else if (event.deltaY < 0) {
-                            // Scrolling up, increase views count
+                        // Scrolling up, increase views count
                         //    videoDataArray.forEach(video => {
-                         //       video.imageSrc = videoDataArray[getRandomInt(0, 3)].imageSrc;
-                          //  });
+                        //       video.imageSrc = videoDataArray[getRandomInt(0, 3)].imageSrc;
+                        //  });
                         //}
 
                         // Update the videos container with the modified data
@@ -346,7 +346,7 @@
                             </video>
                             <div></div>
                             <div class="vjs-poster" tabindex="-1" aria-disabled="false"
-                                style="background-image: url(https://i1.hespress.com/wp-content/uploads/2015/06/REPORTAGEUNE_834943686.jpg);">
+                                style="background-image: url(https://www.destination-evasion.com/wp-content/uploads/2019/05/ateliers-artisanaux-medina-ou-campagne-marrakech-1.jpg);">
                             </div>
                             <div class="vjs-text-track-display" aria-live="off" aria-atomic="true"></div>
                             <div class="vjs-loading-spinner" dir="ltr"></div><button class="vjs-big-play-button"
@@ -649,7 +649,7 @@
                                     </div>
                                     <div class="msg-wrapper">
                                         <div class="msg__name video-p-name offline">Abdelkader El Alaoui</div>
-                                        <div class="msg__content video-p-sub">user feedback                                        </div>
+                                        <div class="msg__content video-p-sub">user feedback </div>
                                     </div>
                                 </div>
                                 <div class="message anim" style="--delay: .3s">
@@ -729,77 +729,75 @@
         </div>
     </div>
     <script>
+        // TO MAKE THE MAP APPEAR YOU MUST
+        // ADD YOUR ACCESS TOKEN FROM
+        // https://account.mapbox.com
+        mapboxgl.accessToken = 'pk.eyJ1IjoieW91c3NlZmlvIiwiYSI6ImNscDFkcWt3NjBsYzgya3M0ajRjcGNpcXUifQ.1tfWjIYjSOj3BGwBEOJ-3w';
         const map = new mapboxgl.Map({
-            container: "map",
-            style: "mapbox://styles/mapbox/streets-v12",
-            center: [-8.3936, 31.0535],
-            zoom: 7,
-            // minZoom: 6.99,
-            // maxZoom: 20,
-            // style: "mapbox://styles/mapbox/light-v11",
+            container: 'map',
+            // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+            style: 'mapbox://styles/mapbox/light-v11',
+            center: [-87.62712, 41.89033],
+            
+            zoom: 15.5,
+            pitch: 45
         });
 
+        function rotateCamera(timestamp) {
+            // clamp the rotation between 0 -360 degrees
+            // Divide timestamp by 100 to slow rotation to ~10 degrees / sec
+            map.rotateTo((timestamp / 100) % 360, { duration: 0 });
+            // Request the next frame of the animation.
+            requestAnimationFrame(rotateCamera);
+        }
+
         map.on('load', () => {
-            map.addSource('radar', {
-                'type': 'image',
-                'url': 'srcs/earth-q.png',
-                'coordinates': [
-                    [-8.701063, 31.453960],
-                    [-7.592604, 31.461657],
-                    [-7.573168, 30.580812],
-                    [-8.838456, 30.555866]
+            // Start the animation.
+            rotateCamera(0);
 
+            // Add 3D buildings and remove label layers to enhance the map
+            const layers = map.getStyle().layers;
+            for (const layer of layers) {
+                if (layer.type === 'symbol' && layer.layout['text-field']) {
+                    // remove text labels
+                    map.removeLayer(layer.id);
+                }
+            }
 
-                    // [-7.461590,33.591397],
-                    // [-6.404282,30.144685],
-                    // [-9.289038,29.567330],
-                    // [-9.497889,31.834270],
-                ]
-            });
             map.addLayer({
-                id: 'radar-layer',
-                'type': 'raster',
-                'source': 'radar',
+                'id': '3d-buildings',
+                'source': 'composite',
+                'source-layer': 'building',
+                'filter': ['==', 'extrude', 'true'],
+                'type': 'fill-extrusion',
+                'minzoom': 15,
                 'paint': {
-                    'raster-fade-duration': 0
+                    'fill-extrusion-color': '#aaa',
+
+                    // use an 'interpolate' expression to add a smooth transition effect to the
+                    // buildings as the user zooms in
+                    'fill-extrusion-height': [
+                        'interpolate',
+                        ['linear'],
+                        ['zoom'],
+                        15,
+                        0,
+                        15.05,
+                        ['get', 'height']
+                    ],
+                    'fill-extrusion-base': [
+                        'interpolate',
+                        ['linear'],
+                        ['zoom'],
+                        15,
+                        0,
+                        15.05,
+                        ['get', 'min_height']
+                    ],
+                    'fill-extrusion-opacity': 0.6
                 }
             });
         });
-
-        // map.on("load", () => {
-        //     map.addSource("maine", {
-        //         type: "geojson",
-        //         data: {
-        //             type: "Feature",
-        //             geometry: {
-        //                 type: "Polygon",
-        //                 coordinates: [
-        //                     [
-        //                         [-8.251775, 31.213731],
-        //                         [-8.240546, 31.208854],
-        //                         [-8.234845, 31.212039],
-        //                         [-8.231877, 31.225920],
-        //                         [-8.242611, 31.230918],
-        //                         [-8.248067, 31.221750],
-        //                         [-8.251775, 31.221750]
-        //                     ]
-        //                 ]
-        //             }
-        //         }
-        //     });
-
-        //     map.addLayer({
-        //         id: "maine",
-        //         type: "fill",
-        //         source: "maine",
-        //         layout: {},
-        //         paint: {
-        //             "fill-color": "#FF0000",
-        //             "fill-opacity": 0.5
-        //         }
-        //     });
-        // });
-
     </script>
     <script>if (window.map instanceof mapboxgl.Map) var i = new instrumentile(map, { token: "pk.eyJ1IjoieW91c3NlZmlvIiwiYSI6ImNscDFkcWt3NjBsYzgya3M0ajRjcGNpcXUifQ.1tfWjIYjSOj3BGwBEOJ-3w", api: "https://api.tiles.mapbox.com", source: "docs-examples" })</script>
 
@@ -809,5 +807,3 @@
 </body>
 
 </html>
-
-https://vp.nyt.com/video/2023/09/11/111255_1_11vid-morocco-carousel-96713_wg_480p.mp4
